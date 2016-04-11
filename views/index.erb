@@ -7,9 +7,30 @@
 </head>
 <body>
 
-  <h1>Test Store Products</h1>
+  <h1>All Products</h1>
 
-  <pre id="products"><%= @products.to_json %></pre>
+  	<a href="/">Products</a>
+	<a href="/orders">Orders</a>
+
+  <p>Products per page: <%= @products.count %></p>
+
+  <hr>
+
+	<% if @products.count > 0 %>
+	    <% @products.each do |product| %>
+	      <li>
+	        <p class="name"><b>Name:</b> <%= product[:name] %></p>
+	        <p class="name"><b>SKU:</b> <%= product[:sku] %></p>
+	        <p class="attribute"><b>Condition:</b> <%= product[:condition] %></p>
+	        <p class="attribute"><b>Price:</b> <%= product[:price] %></p>
+	        <p class="attribute"><b>Stock Level:</b> <%= product[:inventory_level] %></p>
+	        <hr>
+	      </li>
+	    <% end %>
+	  <% else %>
+	    <li>No Products.</li>
+	  <% end %>
+   
 
 </body>
 </html>

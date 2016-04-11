@@ -5,6 +5,7 @@ require 'json'
 require 'haml' 
 require 'pp'
 
+
 class BigCommerceAPI_Test < Sinatra::Base
 
     Bigcommerce.configure do |config|
@@ -16,13 +17,9 @@ class BigCommerceAPI_Test < Sinatra::Base
 
 
   get '/' do
-   
-    # @products = Bigcommerce::Product.all
-    # puts @products
 
     @products = Bigcommerce::Product.all
     puts JSON.pretty_generate(@products)
-
 
     erb :index
 

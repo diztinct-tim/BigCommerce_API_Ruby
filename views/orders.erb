@@ -8,8 +8,33 @@
 <body>
 
 	<h1>All Orders</h1>
-	
-	<pre id="orders"><%= @orders.to_json %></pre>
+
+
+	<a href="/">Products</a>
+	<a href="/orders">Orders</a>
+
+	<% if @orders.count > 50 %>
+   		<p>Orders per page: <%= @orders.count %></p>
+   	<% else %>
+   		<p>Total Orders: <%= @orders.count %></p>
+   	<% end %>
+
+  <hr>
+
+	<% if @orders.count > 0 %>
+	    <% @orders.each do |order| %>
+	      <li>
+	        <p class="name"><b>Customer Name:</b> <%= order[:billing_address][:first_name] %> <%= order[:billing_address][:last_name] %></p>
+	        <p class="attribute"><b>Customer Email:</b> <%= order[:billing_address][:email] %></p>
+	        <p class="attribute"><b>Order Date:</b> <%= order[:date_created] %></p>
+	        <p class="attribute"><b>Order Price (w/ tax):</b> <%= order[:subtotal_inc_tax] %></p>
+	        <p class="attribute"><b>Order ID:</b> <%= order[:id] %></p>
+	        <hr>
+	      </li>
+	    <% end %>
+	  <% else %>
+	    <li>No Products.</li>
+	  <% end %>
 
 </body>
 </html>
