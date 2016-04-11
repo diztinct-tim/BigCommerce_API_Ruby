@@ -21,7 +21,7 @@ class BigCommerceAPI_Test < Sinatra::Base
     @products = Bigcommerce::Product.all
     puts JSON.pretty_generate(@products)
 
-    erb :index
+    erb :products
 
   end
 
