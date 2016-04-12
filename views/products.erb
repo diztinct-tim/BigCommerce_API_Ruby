@@ -24,6 +24,12 @@
 	        <p class="attribute"><b>Condition:</b> <%= product[:condition] %></p>
 	        <p class="attribute"><b>Price:</b> <%= product[:price] %></p>
 	        <p class="attribute"><b>Stock Level:</b> <%= product[:inventory_level] %></p>
+
+	        <pre><%= product[:images][:url] %></pre>
+	        <pre><%= product[:images][:resource] %></pre>
+
+	        <a href="/product/<%= product[:id] %>/images">Get Product Images</a>
+
 	        <hr>
 	      </li>
 	    <% end %>

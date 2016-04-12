@@ -4,7 +4,7 @@ require 'bigcommerce'
 require 'json'
 require 'haml' 
 require 'pp'
-
+require 'pry'
 
 class BigCommerceAPI_Test < Sinatra::Base
 
@@ -26,13 +26,24 @@ class BigCommerceAPI_Test < Sinatra::Base
   end
 
 
-
   get '/orders' do
 
     @orders = Bigcommerce::Order.all
     puts JSON.pretty_generate(@orders)
 
     erb :orders
+
+  end
+
+
+  get '/product/:product_id/images' do
+
+    # @product_images = Bigcommerce::ProductImage.all(@product.id)
+    @id = params[:product_id].to_i
+    @product_images = Bigcommerce::ProductImage.all(@id)
+    puts JSON.pretty_generate(@product_images)
+
+    erb :images
 
   end
 
