@@ -38,9 +38,8 @@ class BigCommerceAPI_Test < Sinatra::Base
 
   get '/product/:product_id/images' do
 
-    # @product_images = Bigcommerce::ProductImage.all(@product.id)
-    @id = params[:product_id].to_i
-    @product_images = Bigcommerce::ProductImage.all(@id)
+    id = params[:product_id].to_i
+    @product_images = Bigcommerce::ProductImage.all(id)
     puts JSON.pretty_generate(@product_images)
 
     erb :images
