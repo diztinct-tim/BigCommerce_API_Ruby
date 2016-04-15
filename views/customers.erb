@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Products</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+</head>
+<body>
+
+  <h1>All Customers</h1>
+
+  	<a href="/">Products</a>
+	<a href="/orders">Orders</a>
+	<a href="/customers">Customers</a>
+	<a href="/store">Store Info</a>
+
+  <p>Customer count: <%= @customers.count %></p>
+
+  <hr>
+
+	<% if @customers.count > 0 %>
+	    <% @customers.each do |customer| %>
+	      <li>
+	      	<p class="name"><b>Customer ID:</b> <%= customer[:id] %></p>
+	        <p class="name"><b>Name:</b> <%= customer[:first_name] %> <%= customer[:last_name] %></p>
+	        <p class="name"><b>Email:</b> <%= customer[:email] %></p>
+	        <p class="name"><b>Phone:</b> <%= customer[:phone] %></p>
+	        <p class="name"><b>Company:</b> <%= customer[:company] %></p>
+	        
+	        <hr>
+	      </li>
+	    <% end %>
+	  <% else %>
+	    <li>No Products.</li>
+	  <% end %>
+   
+
+</body>
+</html>
