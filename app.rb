@@ -25,6 +25,7 @@ class BigCommerceAPI_Test < Sinatra::Base
 
   get '/' do
 
+    @title = "All Products"
     @products = Bigcommerce::Product.all
     puts JSON.pretty_generate(@products)
 
@@ -35,6 +36,7 @@ class BigCommerceAPI_Test < Sinatra::Base
 
   get '/orders' do
 
+    @title = "All Orders"
     @orders = Bigcommerce::Order.all
     puts JSON.pretty_generate(@orders)
 
@@ -44,6 +46,7 @@ class BigCommerceAPI_Test < Sinatra::Base
 
   get '/categories' do
 
+    @title = "All Categories"
     @categories = Bigcommerce::Category.all
     puts JSON.pretty_generate(@categories)
 
@@ -54,6 +57,7 @@ class BigCommerceAPI_Test < Sinatra::Base
 
   get '/product/:product_id/images' do
 
+    @title = "View Photo"
     id = params[:product_id].to_i
     @product_images = Bigcommerce::ProductImage.all(id)
     puts JSON.pretty_generate(@product_images)
@@ -64,6 +68,7 @@ class BigCommerceAPI_Test < Sinatra::Base
 
   get '/customers' do
 
+    @title = "All Customers"
     @customers = Bigcommerce::Customer.all(page: 1)
     puts JSON.pretty_generate(@customers)
 
@@ -73,6 +78,7 @@ class BigCommerceAPI_Test < Sinatra::Base
 
   get '/store' do
 
+    @title = "Store Info"
     @store = Bigcommerce::StoreInfo.info
     puts JSON.pretty_generate(@store)
 
