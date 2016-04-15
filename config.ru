@@ -1,2 +1,2 @@
 require './app'
-run BigCommerceAPI_Test
+run BigCommerceAPI_Test.new
