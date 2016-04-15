@@ -5,6 +5,7 @@ require 'json'
 require 'haml' 
 require 'pp'
 require 'pry'
+require 'securerandom'
 
 class BigCommerceAPI_Test < Sinatra::Base
 
@@ -22,7 +23,6 @@ class BigCommerceAPI_Test < Sinatra::Base
     #   config.access_token = '4y7aci0hsgi8e3qzt8pg3i1u2u64wqg'
     # end
 
-
   get '/' do
 
     @products = Bigcommerce::Product.all
@@ -39,6 +39,15 @@ class BigCommerceAPI_Test < Sinatra::Base
     puts JSON.pretty_generate(@orders)
 
     erb :orders
+
+  end
+
+  get '/categories' do
+
+    @categories = Bigcommerce::Category.all
+    puts JSON.pretty_generate(@categories)
+
+    erb :categories
 
   end
 

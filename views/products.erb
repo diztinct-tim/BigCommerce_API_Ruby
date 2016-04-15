@@ -11,6 +11,7 @@
 
   	<a href="/">Products</a>
 	<a href="/orders">Orders</a>
+	<a href="/categories">Categories</a>
 	<a href="/customers">Customers</a>
 	<a href="/store">Store Info</a>
 
@@ -27,7 +28,7 @@
 	        <p class="attribute"><b>Price:</b> <%= product[:price] %></p>
 	        <p class="attribute"><b>Stock Level:</b> <%= product[:inventory_level] %></p>
 
-	        <pre><%= product[:images][:url] %></pre>
+	        <pre><%#= product[:images][:url] %></pre>
 	        <pre><%= product[:images][:resource] %></pre>
 
 	        <a href="/product/<%= product[:id] %>/images">Get Product Images</a>
@@ -39,6 +40,5 @@
 	    <li>No Products.</li>
 	  <% end %>
    
-
 </body>
 </html>

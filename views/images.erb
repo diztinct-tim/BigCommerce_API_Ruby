@@ -14,7 +14,7 @@
 	<% if @product_images.count > 0 %>
 	    <% @product_images.each do |product_image| %>
 	      <li>
-	      	<img src="<%= product_image[:standard_url] %>" alt="">
+	      	<img src="<%= product_image[:zoom_url] %>" alt="">
 	      </li>
 	    <% end %>
 	  <% else %>
