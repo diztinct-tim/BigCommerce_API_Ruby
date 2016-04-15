@@ -1,28 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>All Orders</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-</head>
-<body>
-
-	<h1>All Orders</h1>
-
-	<a href="/">Products</a>
-	<a href="/orders">Orders</a>
-	<a href="/categories">Categories</a>
-	<a href="/customers">Customers</a>
-	<a href="/store">Store Info</a>
-
-	<% if @orders.count > 50 %>
-   		<p>Orders per page: <%= @orders.count %></p>
-   	<% else %>
-   		<p>Total Orders: <%= @orders.count %></p>
-   	<% end %>
-
-  <hr>
-
 	<% if @orders.count > 0 %>
 	    <% @orders.each do |order| %>
 	      <li>
@@ -38,6 +13,3 @@
 	  <% else %>
 	    <li>No Products.</li>
 	  <% end %>
-
-</body>
-</html>

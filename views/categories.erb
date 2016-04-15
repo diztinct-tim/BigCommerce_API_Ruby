@@ -1,24 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>All Categories</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-</head>
-<body>
-
-  <h1>All Categories</h1>
-
-  	<a href="/">Products</a>
-	<a href="/orders">Orders</a>
-	<a href="/categories">Categories</a>
-	<a href="/customers">Customers</a>
-	<a href="/store">Store Info</a>
-
-  <p>Category count: <%= @categories.count %></p>
-
-  <hr>
-
 	<% if @categories.count > 0 %>
 	    <% @categories.each do |category| %>
 	      <li>
@@ -34,5 +13,3 @@
 	    <li>No Categories.</li>
 	  <% end %>
    
-</body>
-</html>

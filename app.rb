@@ -8,6 +8,7 @@ require 'securerandom'
 
 class BigCommerceAPI_Test < Sinatra::Base
 
+    # legacy
     Bigcommerce.configure do |config|
       config.auth = 'legacy'
       config.url = 'https://store-ebb98.mybigcommerce.com/api/v2/'
@@ -18,8 +19,8 @@ class BigCommerceAPI_Test < Sinatra::Base
     # Oauth
     # Bigcommerce.configure do |config|
     #   config.store_hash = ENV['BC_STORE_HASH']
-    #   config.client_id = '7w19phg5g9h04fg6kqrixo6vcvqk4e2'
-    #   config.access_token = '4y7aci0hsgi8e3qzt8pg3i1u2u64wqg'
+    #   config.client_id = ENV['BC_CLIENT_ID']
+    #   config.access_token = ENV['BC_ACCESS_TOKEN']
     # end
 
   get '/' do

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bigcommerce API</title>
+  
+</head>
+<body>
+
+  <h1>All Products</h1>
+
+	<div class="nav">
+	  	<a href="/">Products</a>
+		<a href="/orders">Orders</a>
+		<a href="/categories">Categories</a>
+		<a href="/customers">Customers</a>
+		<a href="/store">Store Info</a>
+	</div>
+
+	<div class="container">
+	
+		<%= yield %>
+
+	</div>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+   <script src="//cdn.bigcommerce.com/jssdk/bc-sdk.js">
+   <script>
+   Bigcommerce.init();
+   </script>
+</body>
+</html>
